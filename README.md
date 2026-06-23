@@ -1,12 +1,12 @@
-# Oliver Robot Application
+# Oliver Robot
 
 ## Overview
 
-Oliver Robot is a voice-interactive office assistant prototype. It uses speech recognition, audio playback, and OpenAI models to respond to voice commands and demonstrate robot interaction flows.
+Oliver Robot is a voice-interactive office robot assistant prototype. It uses microphone input, speech transcription, OpenAI chat completions, and text-to-speech playback to demonstrate a conversational robot workflow.
 
 ## Prerequisites
 
-- Python 3.11 or lower
+- Python 3.10 or newer
 - Internet connection
 - Microphone and audio output device
 - OpenAI API key provided through the `OPENAI_API_KEY` environment variable
@@ -53,6 +53,22 @@ Run the application with Python:
 python main.py
 ```
 
+Optional runtime settings:
+
+```bash
+python main.py --wake-word oliver --voice alloy --phrase-time-limit 10
+```
+
+Environment variables are also supported:
+
+```bash
+OLIVER_MODEL=gpt-4o-mini
+OLIVER_TTS_MODEL=tts-1
+OLIVER_TRANSCRIPTION_MODEL=whisper-1
+OLIVER_VOICE=alloy
+OLIVER_AUDIO_DIR=audio
+```
+
 ## Usage
 
 Begin commands with "Oliver" so the robot knows the request is directed at it. The prototype can respond conversationally, provide status updates, and recognize example commands such as "empty trash."
@@ -72,6 +88,12 @@ Watch Oliver in action:
 ## Troubleshooting
 
 - Ensure your microphone and audio output device are configured correctly.
+- On some systems, `PyAudio` requires OS-level PortAudio dependencies before `pip install -r requirements.txt` succeeds.
 - Check your internet connection before starting the application.
 - Confirm that `OPENAI_API_KEY` is set in the same terminal session used to run the app.
 - If OpenAI API calls fail, check your account, key permissions, and usage limits.
+
+## Notes
+
+- Generated audio files are written to `audio/` by default and ignored by Git.
+- This is a prototype interaction layer. Physical robot navigation and trash-collection logic are represented as command hooks, not full autonomy.
