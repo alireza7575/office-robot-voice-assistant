@@ -1,61 +1,77 @@
 # Oliver Robot Application
 
 ## Overview
-Oliver Robot is a voice-interactive assistant with a friendly and helpful character, designed to make office tasks more enjoyable. Using the power of OpenAI's ChatGPT API, Oliver can understand and conversationally respond to voice commands.
+
+Oliver Robot is a voice-interactive office assistant prototype. It uses speech recognition, audio playback, and OpenAI models to respond to voice commands and demonstrate robot interaction flows.
 
 ## Prerequisites
+
 - Python 3.11 or lower
 - Internet connection
+- Microphone and audio output device
+- OpenAI API key provided through the `OPENAI_API_KEY` environment variable
 
 ## Installation
-**Step 1: Clone the Repository**
-First, clone the repository containing the `main.py` and `OliverRobot` classes to your local machine:
+
+Clone the repository:
+
 ```bash
-git clone [URL_of_the_Repository]
-cd [Repository_Name]
+git clone https://github.com/alireza7575/Oliver-Robot.git
+cd Oliver-Robot
 ```
 
-**Step 2: Set Up Python Environment**
-Ensure that Python 3.11 or lower is installed on your system. You can download it from the official Python website.
+Create and activate a virtual environment:
 
-**Step 3: Install Required Libraries**
-Install the necessary Python libraries using pip, including the `OpenAi` library which allows Oliver to use the ChatGPT API for natural language understanding and response generation:
 ```bash
-pip install speechrecognition pygame openai
+python -m venv .venv
+.venv\Scripts\activate
 ```
-- **SpeechRecognition**: For processing and transcribing audio input.
-- **Pygame**: For handling audio playback.
-- **Openai**: For accessing GPT models and Whisper API for text and audio processing.
 
-**Step 4: Obtain OpenAI API Key**
-You will need an API key from OpenAI to use their models. Sign up or log in to your OpenAI account and generate an API key from the OpenAI API Dashboard.
+Install the dependencies:
 
-**Step 5: Set API Key**
-Replace the placeholder in main.py with your actual OpenAI API key:
-```python
-api_key = "your-openai-api-key"
-``` 
+```bash
+pip install -r requirements.txt
+```
+
+Set your OpenAI API key before running the application:
+
+```bash
+set OPENAI_API_KEY=your-openai-api-key
+```
+
+For PowerShell:
+
+```powershell
+$env:OPENAI_API_KEY = "your-openai-api-key"
+```
 
 ## Running the Application
-Run the application using Python:
+
+Run the application with Python:
+
 ```bash
 python main.py
 ```
 
 ## Usage
-Interact with Oliver Robot as you would with a friendly office colleague. Begin your command with "Oliver" to catch his attention, and feel free to chat about your day or ask for assistance with tasks. Oliver's character is designed to be:
-- **Engaging**: Oliver has a warm and inviting personality, making interactions pleasant.
-- **Helpful**: Whether it's setting reminders or providing updates, Oliver is here to help.
-- **Witty**: Expect a clever quip or a light-hearted joke to brighten your day.
 
-The robot will respond and perform actions based on the given commands. It can interact, provide status updates, or acknowledge requests like "empty trash."
-For example, you might say, "Oliver, can you pick up the trash on the first floor?" and Oliver will take care of trash for you.
+Begin commands with "Oliver" so the robot knows the request is directed at it. The prototype can respond conversationally, provide status updates, and recognize example commands such as "empty trash."
+
+For example:
+
+```text
+Oliver, can you pick up the trash on the first floor?
+```
 
 ## Demonstration
-Watch Oliver in action and see how he interacts with users in this video: 
+
+Watch Oliver in action:
+
 [![Oliver Robot](https://github.com/alireza7575/Oliver-Robot/assets/41507280/e2231655-53b0-4954-8154-5d56f54e43ee)](https://youtu.be/bHiHujXHWiA "Oliver Robot")
 
 ## Troubleshooting
-- Ensure your microphone is properly set up and working.
-- Check your internet connection as the application requires online access for API calls.
-- If you encounter any errors with API limits or keys, verify your OpenAI account and API key status.
+
+- Ensure your microphone and audio output device are configured correctly.
+- Check your internet connection before starting the application.
+- Confirm that `OPENAI_API_KEY` is set in the same terminal session used to run the app.
+- If OpenAI API calls fail, check your account, key permissions, and usage limits.

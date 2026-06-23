@@ -1,5 +1,6 @@
-import sys
 import logging
+import os
+import sys
 from OliverRobot import OliverRobot
 
 
@@ -9,12 +10,16 @@ def main():
         level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
     )
 
-    api_key = "your-openai-api-key"
+    api_key = os.environ.get("OPENAI_API_KEY")
+    if not api_key:
+        logging.error("OPENAI_API_KEY environment variable is not set.")
+        sys.exit(1)
+
     bot = OliverRobot(api_key)
     robot_answer = bot.get_gpt_response("Do a simple introduce yourself.")
     bot.reply_to_user_by_audio(robot_answer)
     bot.reply_to_user_by_audio(
-        "I am Oliver, an office robot. my primary task is to collect and empty trash bins. Ask me anytime if your need help with yout trash."
+        "I am Oliver, an office robot. My primary task is to collect and empty trash bins. Ask me anytime if you need help with your trash."
     )
     logging.info("Oliver is now operational...")
     try:
