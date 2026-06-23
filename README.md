@@ -59,6 +59,12 @@ Optional runtime settings:
 python main.py --wake-word oliver --voice alloy --phrase-time-limit 10
 ```
 
+Run a local mock demo without microphone, audio playback, or OpenAI calls:
+
+```bash
+python main.py --mock
+```
+
 Environment variables are also supported:
 
 ```bash
@@ -97,3 +103,4 @@ Watch Oliver in action:
 
 - Generated audio files are written to `audio/` by default and ignored by Git.
 - This is a prototype interaction layer. Physical robot navigation and trash-collection logic are represented as command hooks, not full autonomy.
+- `--mock` mode is intended for quick demos and code review without hardware or API credentials.
