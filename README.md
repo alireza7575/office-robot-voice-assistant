@@ -1,8 +1,8 @@
-# Oliver Robot
+# Office Robot Voice Assistant
 
 ## Overview
 
-Oliver Robot is a voice-interactive office robot assistant prototype. It uses microphone input, speech transcription, OpenAI chat completions, and text-to-speech playback to demonstrate a conversational robot workflow.
+Oliver is a voice-interactive office robot assistant prototype. It uses microphone input, speech transcription, OpenAI chat completions, and text-to-speech playback to demonstrate a conversational robot workflow.
 
 ## Prerequisites
 
@@ -16,8 +16,8 @@ Oliver Robot is a voice-interactive office robot assistant prototype. It uses mi
 Clone the repository:
 
 ```bash
-git clone https://github.com/alireza7575/Oliver-Robot.git
-cd Oliver-Robot
+git clone https://github.com/alireza7575/office-robot-voice-assistant.git
+cd office-robot-voice-assistant
 ```
 
 Create and activate a virtual environment:
